@@ -100,86 +100,166 @@ h1::before {
 }
 
 
-#radios{
-    width: 10rem;
-    height: 2.5rem;
-    top: 26rem;
-    left: 10rem;
-    margin: 0 10vh 5vw 0;
+
+.change-color {
+    position: relative;
+    bottom: 3rem;
+    left: 17rem;
+}
+input {
+    display: none;
+  }
+  span:checked::before {
+    width: 40px;
+    height: 40px;
+    display:flex;
+    content: '\f00c';
+    font-size: 25px;
+    font-weight:bold;
     position: absolute;
-    border-radius: 5rem;
-    margin-left: 50vh;
-    background: #fff;
-}
-input[type="radio"]{
+    align-items:center;
+    justify-content:center;
+    font-family:'Font Awesome 5 Free';
+  }
+  span:checked::after {
+    -webkit-animation: click-wave 0.65s;
+    -moz-animation: click-wave 0.65s;
+    animation: click-wave 0.65s;
+    background: #40e0d0;
+    content: '';
+    display: block;
+    position: relative;
+    z-index: 100;
+  }
+  
+  .button {
+    display: inline-block;
+    position: relative;
+    width: 1rem;
+    height: 1rem;
+    margin: 0.5rem;
+    cursor: pointer;
+  }
+  
+  .button span {
+    display: block;
     position: absolute;
-    right: 1000%;
-    z-index: 1;
-}
-label{
-    float:left;
-    width:15%; padding-bottom:15%;
-    margin:0 2.5%;
-    background:rgba(255,255,255);
-    border-radius:50%;
-    cursor:pointer;
-}
-#input1 label{
-    color: rgb(74, 58, 56);
-}
-#input2 {
-    background-color: rgb(74, 58, 56);
-}
-#input3 {
-    background-color: rgb(74, 58, 56);
-}
-#input4 {
-    background-color: rgb(74, 58, 56);
-}
-#slider{
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 20%;
-    padding-bottom: 20%;
-    margin: 2.5% 0 0 5%;
-    background: rgba(28,28,28,0.2);
-    transition: transform 1s;
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 0;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     border-radius: 50%;
-    animation-timing-function: ease-in-out;
-    animation-duration: .3s;
-    animation-fill-mode: forwards;
-    transition: 0.2s left .05s ease-in-out;
-}
-#input1:checked  ~ #slider{ animation-name: input1; left:0; }
-#input2:checked  ~ #slider{ animation-name: input2; left:20%; }
-#input3:checked  ~ #slider{ animation-name: input3; left:40%; }
-#input4:checked  ~ #slider{ animation-name: input4; left:60%; }
+    background: #eeeeee;
+    transition: ease .3s;
+  }
+  
+  .button span:hover {
+    appearance: none;
+    /* Safari support */
+    -webkit-appearance: none;
+    padding: 0.3rem;
+  }
+  .orange .button span {
+    background: #FF5722;
+  }
+  
+  .amber .button span {
+    background: #FFC107;
+  }
+  
+  .lime .button span {
+    background: #8BC34A;
+  }
+  
+  .teal .button span {
+    background: #009688;
+  }
+  
+  .blue .button span {
+    background: #2196F3;
+  }
+  
+  .indigo .button span {
+    background: #3F51B5;
+  }
+  
+  .layer {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: transparent;
+    transition: ease .3s;
+    z-index: -1;
+  }
+  
+  .amber input:checked ~ .layer {
+    background: #FFB300;
+  }
+  
+  .lime input:checked ~ .layer {
+    background: #7CB342;
+  }
+  
+  .teal input:checked ~ .layer {
+    background: #00897B;
+  }
+  
+  .blue input:checked ~ .layer {
+    background: #1E88E5;
+  }
+  
+  .indigo input:checked ~ .layer {
+    background: #3949AB;
+  }
 
 .central__central__right {
     padding: 10vh 5vw;
 }
+.central__central__right div{
+    padding-top: 1.5rem;
+}
 .central__central__right_neck {
+    width: 8rem;
     padding-left: 1.5rem;
 }
 .central__price {
-    padding-top: 5rem;
-    padding-left: 8vw;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     position: absolute;
     display: flex;
     bottom: 3vw;
     color: white;
-    z-index: 5;
+    z-index: 1;
 }
 .central__price img {
     height: 15vh;
     width: 15vw;
 }
+.central__price a {
+    color: rgb(180, 180, 180);
+    text-decoration: none;
+}
+.central__price p {
+    color: rgb(115, 117, 125);
+}
+p, h3 {
+    margin: 0.3rem;
+}
 .central__price div {
+    width: 20vw;
     text-align: center;
-    padding-right: 10rem;
 }
 .central__footer {
+    height:0px;
     display: block;
     justify-content: space-between;
     align-items: center;
@@ -189,3 +269,4 @@ label{
     clip-path: polygon(0 35%, 100% 0, 100% 100%, 0 100%);
     box-sizing:border-box;
 }
+
